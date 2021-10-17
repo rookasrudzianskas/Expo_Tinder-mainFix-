@@ -18,6 +18,7 @@ type Match @model @auth(rules: [{allow: public}]) {
 
 
 type User @model @auth(rules: [{allow: public}]) {
+
   id: ID!
   name: String!
   image: String
