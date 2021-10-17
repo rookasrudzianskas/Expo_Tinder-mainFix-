@@ -29,7 +29,7 @@ export default [
   },
   {
     id: '5',
-    name: 'Rokas Rudzianskas',
+    name: 'Roka Rudzianska',
     image:
       'http://www.svietimonaujienos.lt/wp-content/uploads/2019/12/Rokas-e1575467263326.jpg',
     bio: 'Creative fullstack developer. Enthusiastic Growth Hacker, Internet Marketer, and Adobe Creative Cloud Junky',
