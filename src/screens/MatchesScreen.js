@@ -16,8 +16,6 @@ const MatchesScreen = () => {
         if(dbUsers.length < 0) {
             return;
         }
-
-
         setMe(dbUsers[0]);
     };
 
