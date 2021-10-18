@@ -9,6 +9,13 @@ export const createMatch = /* GraphQL */ `
     createMatch(input: $input, condition: $condition) {
       id
       User1ID
+      User2ID
+      isMatch
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
       User1 {
         id
         name
@@ -17,10 +24,12 @@ export const createMatch = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
-      User2ID
       User2 {
         id
         name
@@ -29,12 +38,12 @@ export const createMatch = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
-      isMatch
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -46,6 +55,13 @@ export const updateMatch = /* GraphQL */ `
     updateMatch(input: $input, condition: $condition) {
       id
       User1ID
+      User2ID
+      isMatch
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
       User1 {
         id
         name
@@ -54,10 +70,12 @@ export const updateMatch = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
-      User2ID
       User2 {
         id
         name
@@ -66,12 +84,12 @@ export const updateMatch = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
-      isMatch
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -83,6 +101,13 @@ export const deleteMatch = /* GraphQL */ `
     deleteMatch(input: $input, condition: $condition) {
       id
       User1ID
+      User2ID
+      isMatch
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
       User1 {
         id
         name
@@ -91,10 +116,12 @@ export const deleteMatch = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
-      User2ID
       User2 {
         id
         name
@@ -103,12 +130,12 @@ export const deleteMatch = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
-      isMatch
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -125,6 +152,9 @@ export const createUser = /* GraphQL */ `
       gender
       lookingFor
       sub
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -143,6 +173,9 @@ export const updateUser = /* GraphQL */ `
       gender
       lookingFor
       sub
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -161,6 +194,9 @@ export const deleteUser = /* GraphQL */ `
       gender
       lookingFor
       sub
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }

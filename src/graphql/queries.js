@@ -6,6 +6,13 @@ export const getMatch = /* GraphQL */ `
     getMatch(id: $id) {
       id
       User1ID
+      User2ID
+      isMatch
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
       User1 {
         id
         name
@@ -14,10 +21,12 @@ export const getMatch = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
-      User2ID
       User2 {
         id
         name
@@ -26,12 +35,12 @@ export const getMatch = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
-      isMatch
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -45,6 +54,13 @@ export const listMatchs = /* GraphQL */ `
       items {
         id
         User1ID
+        User2ID
+        isMatch
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
         User1 {
           id
           name
@@ -53,10 +69,12 @@ export const listMatchs = /* GraphQL */ `
           gender
           lookingFor
           sub
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
-        User2ID
         User2 {
           id
           name
@@ -65,14 +83,72 @@ export const listMatchs = /* GraphQL */ `
           gender
           lookingFor
           sub
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
-        isMatch
-        createdAt
-        updatedAt
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncMatches = /* GraphQL */ `
+  query SyncMatches(
+    $filter: ModelMatchFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncMatches(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        User1ID
+        User2ID
+        isMatch
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        User1 {
+          id
+          name
+          image
+          bio
+          gender
+          lookingFor
+          sub
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        User2 {
+          id
+          name
+          image
+          bio
+          gender
+          lookingFor
+          sub
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }
+      nextToken
+      startedAt
     }
   }
 `;
@@ -86,6 +162,9 @@ export const getUser = /* GraphQL */ `
       gender
       lookingFor
       sub
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -106,10 +185,46 @@ export const listUsers = /* GraphQL */ `
         gender
         lookingFor
         sub
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncUsers = /* GraphQL */ `
+  query SyncUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncUsers(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        image
+        bio
+        gender
+        lookingFor
+        sub
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
     }
   }
 `;
