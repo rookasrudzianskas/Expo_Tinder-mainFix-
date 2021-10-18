@@ -28,6 +28,7 @@ const ProfileScreen = () => {
     useEffect(() => {
         const getCurrentUser = async () => {
             const user = await Auth.currentAuthenticatedUser();
+            console.log(user.attributes);
             const dbUsers = await DataStore.query(User, u => u.sub('eq', user.attributes.sub),);
 
             if(!dbUsers || dbUsers.length === 0) {
