@@ -1,23 +1,190 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const syncTodos = /* GraphQL */ `
-  query SyncTodos(
-    $filter: ModeltodoFilterInput
+export const getMatch = /* GraphQL */ `
+  query GetMatch($id: ID!) {
+    getMatch(id: $id) {
+      id
+      User1ID
+      User2ID
+      isMatch
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      User1 {
+        id
+        name
+        image
+        bio
+        gender
+        lookingFor
+        sub
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      User2 {
+        id
+        name
+        image
+        bio
+        gender
+        lookingFor
+        sub
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+    }
+  }
+`;
+export const listMatchs = /* GraphQL */ `
+  query ListMatchs(
+    $filter: ModelMatchFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMatchs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        User1ID
+        User2ID
+        isMatch
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        User1 {
+          id
+          name
+          image
+          bio
+          gender
+          lookingFor
+          sub
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        User2 {
+          id
+          name
+          image
+          bio
+          gender
+          lookingFor
+          sub
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncMatches = /* GraphQL */ `
+  query SyncMatches(
+    $filter: ModelMatchFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncTodos(
+    syncMatches(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
       lastSync: $lastSync
     ) {
       items {
-        name
-        user
         id
+        User1ID
+        User2ID
+        isMatch
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        User1 {
+          id
+          name
+          image
+          bio
+          gender
+          lookingFor
+          sub
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        User2 {
+          id
+          name
+          image
+          bio
+          gender
+          lookingFor
+          sub
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
+      id
+      name
+      image
+      bio
+      gender
+      lookingFor
+      sub
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        image
+        bio
+        gender
+        lookingFor
+        sub
         _version
         _deleted
         _lastChangedAt
@@ -29,31 +196,27 @@ export const syncTodos = /* GraphQL */ `
     }
   }
 `;
-export const getTodo = /* GraphQL */ `
-  query GetTodo($id: ID!) {
-    getTodo(id: $id) {
-      name
-      user
-      id
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listTodos = /* GraphQL */ `
-  query ListTodos(
-    $filter: ModeltodoFilterInput
+export const syncUsers = /* GraphQL */ `
+  query SyncUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
+    $lastSync: AWSTimestamp
   ) {
-    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    syncUsers(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
       items {
-        name
-        user
         id
+        name
+        image
+        bio
+        gender
+        lookingFor
+        sub
         _version
         _deleted
         _lastChangedAt
