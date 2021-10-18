@@ -67,8 +67,6 @@ const HomeScreen = () => {
         }
 
         console.warn('Sending him a match request');
-
-
                 const newMatch = new Match({
                         User1ID: me.id,
                         User2ID: currentUser.id,
