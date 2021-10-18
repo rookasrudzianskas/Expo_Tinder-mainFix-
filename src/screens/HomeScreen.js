@@ -73,7 +73,7 @@ const HomeScreen = () => {
                         isMatch: false,
                     });
 
-                console.log(newMatch)
+                // console.log(newMatch)
                 await DataStore.save(newMatch);
     }
 
