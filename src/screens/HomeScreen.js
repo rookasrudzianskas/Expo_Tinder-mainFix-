@@ -60,7 +60,7 @@ const HomeScreen = () => {
         ));
 
         if(hisMatches.length > 0) {
-            console.log('Yay, this is a new match');
+            console.warn('Yay, this is a new match 🔥 ❤️');
             const hisMatch = hisMatches[0];
             await DataStore.save(Match.copyOf(hisMatch, updated => (updated.isMatch = true)),);
             return;
