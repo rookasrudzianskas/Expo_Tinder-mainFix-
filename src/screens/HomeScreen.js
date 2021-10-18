@@ -45,15 +45,15 @@ const HomeScreen = () => {
         if(!currentUser || !me) {
             return;
         }
-        //
-        // const myMatches = await DataStore.query(Match, match => (
-        //     match.User1ID('eq', me.id).User2ID('eq', currentUser.id)
-        // ));
-        //
-        // if(myMatches.length > 0) {
-        //     console.warn('You already swiped right to this user');
-        //     return;
-        // }
+
+        const myMatches = await DataStore.query(Match, match => (
+            match.User1ID('eq', me.id).User2ID('eq', currentUser.id)
+        ));
+
+        if(myMatches.length > 0) {
+            console.warn('You already swiped right to this user');
+            return;
+        }
 
         const hisMatches = await DataStore.query(Match, match => (
             match.User1ID('eq', currentUser.id).User2ID('eq', me.id)
@@ -62,7 +62,7 @@ const HomeScreen = () => {
         if(hisMatches.length > 0) {
             console.warn('Yay, this is a new match 🔥 ❤️');
             const hisMatch = hisMatches[0];
-            await DataStore.save(Match.copyOf(hisMatch, updated => (updated.isMatch = true)),);
+            DataStore.save(Match.copyOf(hisMatch, updated => (updated.isMatch = true)),).then();
             return;
         }
 
@@ -74,7 +74,7 @@ const HomeScreen = () => {
                     });
 
                 // console.log(newMatch)
-                await DataStore.save(newMatch);
+        DataStore.save(newMatch).then();
     }
 
     const [users, setUsers] = useState([]);
