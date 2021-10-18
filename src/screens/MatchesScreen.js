@@ -15,7 +15,6 @@ const MatchesScreen = () => {
         console.log('This user', user);
         const dbUsers = await DataStore.query(User, u => u.sub === user.attributes.sub);
 
-
         if(dbUsers.length < 0) {
             return;
         }
