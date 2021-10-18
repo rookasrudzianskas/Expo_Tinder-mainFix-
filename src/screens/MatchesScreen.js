@@ -8,6 +8,8 @@ import {Match, User} from "../models";
 const MatchesScreen = () => {
     const [matches, setMatches] = useState([]);
     const [me, setMe] = useState(null);
+
+
     const getCurrentUser = async () => {
         const user = await Auth.currentAuthenticatedUser();
         const dbUsers = await DataStore.query(User, u => u.sub === user.attributes.sub);
@@ -24,9 +26,13 @@ const MatchesScreen = () => {
     }, []);
 
     useEffect(() =>  {
+        if(!me) {
+            return;
+        }
         const fetchMatches = async () => {
-            const result = await DataStore.query(Match, m => m.isMatch('eq', true).or(m => m.User1ID('eq')));
+            const result = await DataStore.query(Match, m => m.isMatch('eq', true).or(m => m.User1ID('eq', me.id).User2ID('eq', me.id)),);
             console.log("This is result about the users", result);
+            setMatches(result);
         };
         fetchMatches();
     }, [me]);
@@ -40,9 +46,9 @@ const MatchesScreen = () => {
                         New Matches 🚀
                     </Text>
                     <View style={styles.users}>
-                        {users.map((user, index) => (
+                        {matches.map((match, index) => (
                             <View key={index} style={[styles.user, {marginHorizontal: 10, marginTop: 6}]}>
-                                <Image source={{uri: user.image}} style={styles.image} />
+                                <Image source={{uri: match.user1.image}} style={styles.image} />
                             </View>
                         )) }
                     </View>
