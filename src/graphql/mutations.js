@@ -1,157 +1,15 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createMatch = /* GraphQL */ `
-  mutation CreateMatch(
-    $input: CreateMatchInput!
-    $condition: ModelMatchConditionInput
+export const createTodo = /* GraphQL */ `
+  mutation CreateTodo(
+    $input: CreateTodoInput!
+    $condition: ModeltodoConditionInput
   ) {
-    createMatch(input: $input, condition: $condition) {
-      id
-      User1ID
-      User2ID
-      isMatch
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      User1 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      User2 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`;
-export const updateMatch = /* GraphQL */ `
-  mutation UpdateMatch(
-    $input: UpdateMatchInput!
-    $condition: ModelMatchConditionInput
-  ) {
-    updateMatch(input: $input, condition: $condition) {
-      id
-      User1ID
-      User2ID
-      isMatch
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      User1 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      User2 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`;
-export const deleteMatch = /* GraphQL */ `
-  mutation DeleteMatch(
-    $input: DeleteMatchInput!
-    $condition: ModelMatchConditionInput
-  ) {
-    deleteMatch(input: $input, condition: $condition) {
-      id
-      User1ID
-      User2ID
-      isMatch
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      User1 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      User2 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`;
-export const createUser = /* GraphQL */ `
-  mutation CreateUser(
-    $input: CreateUserInput!
-    $condition: ModelUserConditionInput
-  ) {
-    createUser(input: $input, condition: $condition) {
-      id
+    createTodo(input: $input, condition: $condition) {
       name
-      image
-      bio
-      gender
-      lookingFor
-      sub
+      user
+      id
       _version
       _deleted
       _lastChangedAt
@@ -160,19 +18,15 @@ export const createUser = /* GraphQL */ `
     }
   }
 `;
-export const updateUser = /* GraphQL */ `
-  mutation UpdateUser(
-    $input: UpdateUserInput!
-    $condition: ModelUserConditionInput
+export const updateTodo = /* GraphQL */ `
+  mutation UpdateTodo(
+    $input: UpdateTodoInput!
+    $condition: ModeltodoConditionInput
   ) {
-    updateUser(input: $input, condition: $condition) {
-      id
+    updateTodo(input: $input, condition: $condition) {
       name
-      image
-      bio
-      gender
-      lookingFor
-      sub
+      user
+      id
       _version
       _deleted
       _lastChangedAt
@@ -181,19 +35,15 @@ export const updateUser = /* GraphQL */ `
     }
   }
 `;
-export const deleteUser = /* GraphQL */ `
-  mutation DeleteUser(
-    $input: DeleteUserInput!
-    $condition: ModelUserConditionInput
+export const deleteTodo = /* GraphQL */ `
+  mutation DeleteTodo(
+    $input: DeleteTodoInput!
+    $condition: ModeltodoConditionInput
   ) {
-    deleteUser(input: $input, condition: $condition) {
-      id
+    deleteTodo(input: $input, condition: $condition) {
       name
-      image
-      bio
-      gender
-      lookingFor
-      sub
+      user
+      id
       _version
       _deleted
       _lastChangedAt

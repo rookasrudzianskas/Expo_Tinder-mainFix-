@@ -1,145 +1,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateMatch = /* GraphQL */ `
-  subscription OnCreateMatch {
-    onCreateMatch {
-      id
-      User1ID
-      User2ID
-      isMatch
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      User1 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      User2 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`;
-export const onUpdateMatch = /* GraphQL */ `
-  subscription OnUpdateMatch {
-    onUpdateMatch {
-      id
-      User1ID
-      User2ID
-      isMatch
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      User1 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      User2 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`;
-export const onDeleteMatch = /* GraphQL */ `
-  subscription OnDeleteMatch {
-    onDeleteMatch {
-      id
-      User1ID
-      User2ID
-      isMatch
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      User1 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      User2 {
-        id
-        name
-        image
-        bio
-        gender
-        lookingFor
-        sub
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-    }
-  }
-`;
-export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser {
-    onCreateUser {
-      id
+export const onCreateTodo = /* GraphQL */ `
+  subscription OnCreateTodo {
+    onCreateTodo {
       name
-      image
-      bio
-      gender
-      lookingFor
-      sub
+      user
+      id
       _version
       _deleted
       _lastChangedAt
@@ -148,16 +15,12 @@ export const onCreateUser = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser {
-    onUpdateUser {
-      id
+export const onUpdateTodo = /* GraphQL */ `
+  subscription OnUpdateTodo {
+    onUpdateTodo {
       name
-      image
-      bio
-      gender
-      lookingFor
-      sub
+      user
+      id
       _version
       _deleted
       _lastChangedAt
@@ -166,16 +29,12 @@ export const onUpdateUser = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser {
-    onDeleteUser {
-      id
+export const onDeleteTodo = /* GraphQL */ `
+  subscription OnDeleteTodo {
+    onDeleteTodo {
       name
-      image
-      bio
-      gender
-      lookingFor
-      sub
+      user
+      id
       _version
       _deleted
       _lastChangedAt
