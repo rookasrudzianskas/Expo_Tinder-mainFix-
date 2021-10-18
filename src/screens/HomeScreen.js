@@ -17,6 +17,7 @@ const HomeScreen = () => {
 
     const [currentUser, setCurrentUser] = useState(null);
     const [me, setMe] = useState(null);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const getCurrentUser = async () => {
@@ -34,7 +35,6 @@ const HomeScreen = () => {
         getCurrentUser().then();
     }, []);
 
-    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const fetchUsers = async () => {
