@@ -10,7 +10,7 @@ const MatchesScreen = () => {
 
     useEffect(() =>  {
         const fetchMatches = async () => {
-            const result = await DataStore.query(Match);
+            const result = await DataStore.query(Match, m => m.isMatch('eq', true));
             console.log("This is result about the users", result);
         };
         fetchMatches();
