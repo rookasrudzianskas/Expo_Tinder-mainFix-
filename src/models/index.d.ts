@@ -37,6 +37,7 @@ export declare class User {
   readonly gender: Genders | keyof typeof Genders;
   readonly lookingFor: Genders | keyof typeof Genders;
   readonly sub: string;
+  readonly text?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<User, UserMetaData>);
