@@ -2,11 +2,28 @@ import React, {useEffect, useState} from 'react';
 import {Text, View, StyleSheet, SafeAreaView, Image} from 'react-native';
 import tw from "tailwind-react-native-classnames";
 import users from "../../assets/data/users";
-import {DataStore} from 'aws-amplify';
-import {Match} from "../models";
+import {Auth, DataStore} from 'aws-amplify';
+import {Match, User} from "../models";
 
 const MatchesScreen = () => {
     const [matches, setMatches] = useState([]);
+    const [me, setMe] = useState(null);
+    const getCurrentUser = async () => {
+        const user = await Auth.currentAuthenticatedUser();
+        const dbUsers = await DataStore.query(User, u => u.sub === user.attributes.sub);
+
+
+        if(dbUsers.length < 0) {
+            return;
+        }
+
+
+        setMe(dbUsers[0]);
+    };
+
+    useEffect(() => {
+        getCurrentUser();
+    }, []);
 
     useEffect(() =>  {
         const fetchMatches = async () => {
@@ -14,7 +31,7 @@ const MatchesScreen = () => {
             console.log("This is result about the users", result);
         };
         fetchMatches();
-    }, []);
+    }, [me]);
 
     return (
 
