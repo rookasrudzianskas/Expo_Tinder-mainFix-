@@ -21,17 +21,27 @@ const HomeScreen = () => {
     useEffect(() => {
         const getCurrentUser = async () => {
             const user = await Auth.currentAuthenticatedUser();
-            const dbUsers = await DataStore.query(User, u => u.sub === user.attributes.sub);
 
-
-            if(dbUsers.length < 0) {
+            const dbUsers = await DataStore.query(
+                User,
+                u => u.sub === user.attributes.sub,
+            );
+            if (dbUsers.length < 0) {
                 return;
             }
-
-
             setMe(dbUsers[0]);
         };
-        getCurrentUser();
+        getCurrentUser().then();
+    }, []);
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            const fetchedUsers = await DataStore.query(User);
+            setUsers(fetchedUsers);
+        };
+        fetchUsers();
     }, []);
 
     const onSwipeLeft = () => {
@@ -82,15 +92,7 @@ const HomeScreen = () => {
         DataStore.save(newMatch).then();
     };
 
-    const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            const fetchedUsers = await DataStore.query(User);
-            setUsers(fetchedUsers);
-        }
-        fetchUsers();
-    }, []);
 
     // console.warn(users);
 
