@@ -68,12 +68,15 @@ const HomeScreen = () => {
 
         console.warn('Sending him a match request');
 
-                await DataStore.save(new Match({
+
+                const newMatch = new Match({
                         User1ID: me.id,
                         User2ID: currentUser.id,
                         isMatch: false,
-                    }),
-                );
+                    });
+
+                console.log(newMatch)
+                await DataStore.save(newMatch);
     }
 
     const [users, setUsers] = useState([]);
