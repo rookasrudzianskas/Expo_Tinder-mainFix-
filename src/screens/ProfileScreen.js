@@ -9,8 +9,9 @@ import {User} from "../models";
 
 const ProfileScreen = () => {
 
-    const signOutFunc = () => {
-        Auth.signOut();
+    const signOutFunc = async () => {
+        await DataStore.clear();
+        Auth.signOut().then();
     //     sign out
     }
 
